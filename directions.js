@@ -79,3 +79,21 @@ User can add tasks.
 User can play and pause tasks
 When User plays one task, all the other tasks automatically pause.
 User can see the total amount spent on each task and on all the tasks combined.
+
+Notes:
+
+Within this function, we need 2 things:
+
+posts, and the total amount of time.
+
+
+
+const getListing = createSelector(
+  state => state.postsById,
+  state => state.usersById,
+  state => state.postListing,
+  (posts, users, listing) => listing.map(id => {
+    const post = posts[id];
+    return {...post, user: users[post.author]}
+  })
+);
