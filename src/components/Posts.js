@@ -2,11 +2,16 @@ import React from 'react';
 import {createSelector} from 'reselect'
 import {connect} from 'react-redux';
 
-let count = 0;
+import Counter from './Counter';
+
+let timesRendered=0;
 
 class Tasks extends React.Component {
+
   render() {
-    console.log(`Posts render ${++count}`);
+
+    console.log('Tasks in posts component: ',this.props.tasks)
+    console.log(`Tasks render ${++timesRendered}`);
     return (
       <div>
         <h3>Tasks</h3>
@@ -14,6 +19,7 @@ class Tasks extends React.Component {
           {this.props.tasks.map(x =>
             <li key={x.id}>
               {`${x.title} - ${x.user.first} ${x.user.last}`}
+              <Counter count={x.count} />
             </li>
           )}
         </ul>

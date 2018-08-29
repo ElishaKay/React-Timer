@@ -8,6 +8,7 @@ class Counter extends React.Component {
       this.props.increment();
     }, 1000);
   }
+  
   render() {
     return (
       <div>
