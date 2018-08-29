@@ -1,24 +1,31 @@
-import axios from "axios";
-
 export const FETCH_TASKS = "fetch_tasks";
-export const CREATE_TASK = "create_task";
+export const SAVE_TASK = "save_task";
 export const DELETE_TASK = "delete_task";
 
-export function fetchPosts() {
-  const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
-
+export function fetchTasks() {
+  let tasks = {1: { 
+			id: 1,
+			title: 'Learn React',
+			time: 230
+		},
+		2: { 
+			id: 2,
+			title: 'Learn Redux',
+			time: 100
+		}
+	}
   return {
     type: FETCH_TASKS,
-    payload: request
+    payload: tasks
   };
 }
 
 export function createTask(values, callback) {
-  
+  console.log('newTask Passed to the actions file: ', values)
 
   return {
-    type: CREATE_TASK,
-    payload: request
+    type: SAVE_TASK,
+    payload: {title: 'new task'}
   };
 }
 

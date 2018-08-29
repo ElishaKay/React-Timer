@@ -1,4 +1,6 @@
 import {combineReducers} from 'redux';
+import { reducer as formReducer } from "redux-form";
+import tasksReducer from "./tasks_reducer"; 
 
 export const usersByIdReducer = (state = {}, action) => {
   switch (action.type) {
@@ -58,4 +60,6 @@ export default combineReducers({
   tasksById: tasksByIdReducer,
   taskListing: taskListingReducer,
   count: counterReducer,
+  tasks: tasksReducer,
+  form: formReducer
 });
