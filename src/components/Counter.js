@@ -20,7 +20,7 @@ class Counter extends React.Component {
 
 const mapState = (state) => ({count: state.count});
 const mapDispatch = {
-  increment: () => ({type: 'INCREMENT'}),
+  increment: () => ({type: 'INCREMENT', taskId: 1}),
 };
 
 
