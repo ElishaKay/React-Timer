@@ -21,23 +21,24 @@ export const usersListingReducer = (state = {}, action) => {
 };
 
 
-export const postsByIdReducer = (state = {}, action) => {
+export const tasksByIdReducer = (state = {}, action) => {
   switch (action.type) {
     case 'RECEIVE_DATA':
       const newState = {...state};
-      console.log(action)
-      action.payload.posts.forEach((post) => {
-        newState[post.id] = post;
+      
+      action.payload.tasks.forEach((task) => {
+        newState[task.id] = task;
       });
+      console.log('newState: ', newState)
       return newState;
     default: return state
   }
 }
 
-export const postListingReducer = (state = [], action) => {
+export const taskListingReducer = (state = [], action) => {
   switch (action.type) {
     case 'RECEIVE_DATA':
-      return action.payload.posts.map(x => x.id);
+      return action.payload.tasks.map(x => x.id);
     default: return state
   }
 }
@@ -53,7 +54,7 @@ export const counterReducer = (state = 1, action) => {
 export default combineReducers({
   usersById: usersByIdReducer,
   usersListing: usersListingReducer,
-  postsById: postsByIdReducer,
-  postListing: postListingReducer,
+  tasksById: tasksByIdReducer,
+  taskListing: taskListingReducer,
   count: counterReducer,
 });

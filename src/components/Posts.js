@@ -4,14 +4,14 @@ import {connect} from 'react-redux';
 
 let count = 0;
 
-class Posts extends React.Component {
+class Tasks extends React.Component {
   render() {
     console.log(`Posts render ${++count}`);
     return (
       <div>
-        <h3>Posts</h3>
+        <h3>Tasks</h3>
         <ul>
-          {this.props.posts.map(x =>
+          {this.props.tasks.map(x =>
             <li key={x.id}>
               {`${x.title} - ${x.user.first} ${x.user.last}`}
             </li>
@@ -23,17 +23,17 @@ class Posts extends React.Component {
 }
 
 const getListing = createSelector(
-  state => state.postsById,
+  state => state.tasksById,
   state => state.usersById,
-  state => state.postListing,
-  (posts, users, listing) => listing.map(id => {
-    const post = posts[id];
-    return {...post, user: users[post.author]}
+  state => state.taskListing,
+  (tasks, users, listing) => listing.map(id => {
+    const task = tasks[id];
+    return {...task, user: users[task.author]}
   })
 );
 
 const mapState = (state) => {
-  return {posts: getListing(state)};
+  return {tasks: getListing(state)};
 };
 
-export default connect(mapState)(Posts);
+export default connect(mapState)(Tasks);

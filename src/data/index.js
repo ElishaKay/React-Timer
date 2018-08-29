@@ -1,11 +1,11 @@
-export const getPosts = () => ({
-  posts: [
-    {id: 'post-1', author: 'user-1', title: 'Post 1'},
-    {id: 'post-2', author: 'user-2', title: 'Post 2'},
-    {id: 'post-3', author: 'user-3', title: 'Post 3'},
-    {id: 'post-4', author: 'user-1', title: 'Post 4'},
-    {id: 'post-5', author: 'user-2', title: 'Post 5'},
-    {id: 'post-6', author: 'user-3', title: 'Post 6'},
+export const getTasks = () => ({
+  tasks: [
+    {id: 'task-1', author: 'user-1', title: 'task 1'},
+    {id: 'task-2', author: 'user-2', title: 'task 2'},
+    {id: 'task-3', author: 'user-3', title: 'task 3'},
+    {id: 'task-4', author: 'user-1', title: 'task 4'},
+    {id: 'task-5', author: 'user-2', title: 'task 5'},
+    {id: 'task-6', author: 'user-3', title: 'task 6'},
   ],
   users: [
     {
