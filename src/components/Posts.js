@@ -5,8 +5,6 @@ import {connect} from 'react-redux';
 let count = 0;
 
 class Posts extends React.Component {
-
-
   render() {
     console.log(`Posts render ${++count}`);
     return (
@@ -25,10 +23,14 @@ class Posts extends React.Component {
 }
 
 const getListing = createSelector(
-  state => state.posts,
-  (posts) => { 
-    return posts
-  });
+  state => state.postsById,
+  state => state.usersById,
+  state => state.postListing,
+  (posts, users, listing) => listing.map(id => {
+    const post = posts[id];
+    return {...post, user: users[post.author]}
+  })
+);
 
 const mapState = (state) => {
   return {posts: getListing(state)};

@@ -4,8 +4,6 @@ import store from './store';
 import Posts from './components/Posts';
 import Counter from './components/Counter';
 
-const initial = store.getState();
-
 class App extends Component {
   render() {
     return (
@@ -14,7 +12,6 @@ class App extends Component {
         <Posts />
         <Counter />
 
-        <pre>{JSON.stringify(initial, null, 2)}</pre>
       </div>
     );
   }
