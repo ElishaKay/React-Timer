@@ -25,6 +25,7 @@ export const postsByIdReducer = (state = {}, action) => {
   switch (action.type) {
     case 'RECEIVE_DATA':
       const newState = {...state};
+      console.log(action)
       action.payload.posts.forEach((post) => {
         newState[post.id] = post;
       });

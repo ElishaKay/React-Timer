@@ -69,6 +69,31 @@ reselect library caches all the values of the things that you calculate from the
 
 Added value of "selectors":
 - we dont need to loop through our state every time component gets rerendered
-- signle source of truth (not two)
+- single source of truth (not two)
 - example: the Total amount of time spent on all tasks combined.
 
+
+Feature-List:
+
+User can add tasks.
+User can play and pause tasks
+When User plays one task, all the other tasks automatically pause.
+User can see the total amount spent on each task and on all the tasks combined.
+
+Notes:
+
+Within this function, we need 2 things:
+
+posts, and the total amount of time.
+
+
+
+const getListing = createSelector(
+  state => state.postsById,
+  state => state.usersById,
+  state => state.postListing,
+  (posts, users, listing) => listing.map(id => {
+    const post = posts[id];
+    return {...post, user: users[post.author]}
+  })
+);
