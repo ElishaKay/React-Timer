@@ -1,24 +1,45 @@
 import React from 'react';
+import {createSelector} from 'reselect'
+import {connect} from 'react-redux';
 
-let count = 0;
+import Counter from './Counter';
+
+let timesRendered=0;
 
 class Tasks extends React.Component {
-  componentDidMount(){
-    console.log('this.props in Tasks component: ',this.props)
-  }
 
   render() {
-    console.log(`Posts render ${++count}`);
-    
+
+    console.log('Tasks in posts component: ',this.props.tasks)
+    console.log(`Tasks render ${++timesRendered}`);
     return (
       <div>
-        <h3>Posts</h3>
+        <h3>Tasks</h3>
         <ul>
-          
+          {this.props.tasks.map(x =>
+            <li key={x.id}>
+              {`${x.title} - ${x.user.first} ${x.user.last}`}
+              <Counter count={x.count} />
+            </li>
+          )}
         </ul>
       </div>
     );
   }
 }
 
-export default Tasks;
+const getListing = createSelector(
+  state => state.tasksById,
+  state => state.usersById,
+  state => state.taskListing,
+  (tasks, users, listing) => listing.map(id => {
+    const task = tasks[id];
+    return {...task, user: users[task.author]}
+  })
+);
+
+const mapState = (state) => {
+  return {tasks: getListing(state)};
+};
+
+export default connect(mapState)(Tasks);

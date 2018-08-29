@@ -18,7 +18,7 @@ class TasksIndex extends Component {
       <div>
         <h1>Reselect Redux</h1>
         <TasksNew />
-        <Tasks tasks={this.props.tasks}/>
+        <Tasks />
         <Counter />
       </div>
     );
