@@ -1,60 +1,14 @@
 import {combineReducers} from 'redux';
 import { reducer as formReducer } from "redux-form";
-import tasksReducer from "./tasks_reducer"; 
-
-export const usersByIdReducer = (state = {}, action) => {
-  switch (action.type) {
-    case 'RECEIVE_DATA':
-      const newState = {...state};
-      action.payload.users.forEach((user) => {
-        newState[user.id] = user;
-      });
-      return newState;
-    default: return state
-  }
-};
-
-export const usersListingReducer = (state = {}, action) => {
-  switch (action.type) {
-    case 'RECEIVE_DATA':
-      return action.payload.users.map(x => x.id);
-    default: return state
-  }
-};
+import tasksReducer from "./tasksReducer"; 
+import counterReducer from "./counterReducer";
+import taskListingReducer from "./taskListingReducer";
+import tasksByIdReducer from "./tasksByIdReducer";
+import usersByIdReducer from "./usersByIdReducer";
+import usersListingReducer from "./usersListingReducer";
 
 
-export const tasksByIdReducer = (state = {}, action) => {
-  switch (action.type) {
-    case 'RECEIVE_DATA':
-      const newState = {...state};
-      
-      action.payload.tasks.forEach((task) => {
-        newState[task.id] = task;
-      });
-      console.log('newState: ', newState)
-      return newState;
-    default: return state
-  }
-}
-
-export const taskListingReducer = (state = [], action) => {
-  switch (action.type) {
-    case 'RECEIVE_DATA':
-      return action.payload.tasks.map(x => x.id);
-    default: return state
-  }
-}
-
-export const counterReducer = (state = 1, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      console.log('action.id: ',action.id)
-      return state + 1;
-    default: return state;
-  }
-}
-
-export default combineReducers({
+const rootReducer = combineReducers({
   usersById: usersByIdReducer,
   usersListing: usersListingReducer,
   tasksById: tasksByIdReducer,
@@ -63,3 +17,6 @@ export default combineReducers({
   tasks: tasksReducer,
   form: formReducer
 });
+
+
+export default rootReducer;

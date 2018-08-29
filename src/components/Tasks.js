@@ -19,7 +19,7 @@ class Tasks extends React.Component {
           {this.props.tasks.map(x =>
             <li key={x.id}>
               {`${x.title} - ${x.user.first} ${x.user.last}`}
-              <Counter count={x.count} />
+              <Counter task={x} />
             </li>
           )}
         </ul>
