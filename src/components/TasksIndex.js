@@ -9,8 +9,8 @@ import TasksNew from './NewTask';
 
 
 class TasksIndex extends Component {
-  componentDidMount() {
-    this.props.fetchTasks();
+  componentDidMount(){
+    console.log('componentDidMount function: ',this.props.fetchTasks())
   }
 
   render() {
@@ -18,7 +18,7 @@ class TasksIndex extends Component {
       <div>
         <h1>Reselect Redux</h1>
         <TasksNew />
-        <Tasks />
+        <Tasks tasks={this.props.tasks}/>
         <Counter />
       </div>
     );
