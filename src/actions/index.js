@@ -1,5 +1,5 @@
 export const FETCH_TASKS = "fetch_tasks";
-export const CREATE_TASK = "create_task";
+export const SAVE_TASK = "save_task";
 export const DELETE_TASK = "delete_task";
 
 // export function fetchTasks() {
@@ -15,7 +15,7 @@ export function createTask(values, callback) {
   
 
   return {
-    type: CREATE_TASK,
+    type: SAVE_TASK,
     payload: {title: 'new task'}
   };
 }
