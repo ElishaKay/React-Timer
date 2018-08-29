@@ -1,4 +1,4 @@
-export const getPosts = () => ({
+export const getTasks = () => ({
   posts: [
     {id: 'post-1', author: 'user-1', title: 'Post 1'},
     {id: 'post-2', author: 'user-2', title: 'Post 2'},

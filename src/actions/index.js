@@ -4,8 +4,8 @@ export const FETCH_TASKS = "fetch_tasks";
 export const CREATE_TASK = "create_task";
 export const DELETE_TASK = "delete_task";
 
-export function fetchPosts() {
-  const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
+export function fetchTasks() {
+  
 
   return {
     type: FETCH_TASKS,
