@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 let count = 0;
 
-class Posts extends React.Component {
+class Tasks extends React.Component {
   render() {
     console.log(`Posts render ${++count}`);
     return (
@@ -36,4 +36,4 @@ const mapState = (state) => {
   return {posts: getListing(state)};
 };
 
-export default connect(mapState)(Posts);
+export default connect(mapState)(Tasks);
