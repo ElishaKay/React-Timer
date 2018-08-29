@@ -12,7 +12,7 @@ export const DELETE_TASK = "delete_task";
 // }
 
 export function createTask(values, callback) {
-  
+  console.log('newTask Passed to the actions file: ', values)
 
   return {
     type: SAVE_TASK,
