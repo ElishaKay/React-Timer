@@ -1,6 +1,4 @@
-export const FETCH_TASKS = "fetch_tasks";
-export const SAVE_TASK = "save_task";
-export const DELETE_TASK = "delete_task";
+import { FETCH_TASKS, SAVE_TASK, DELETE_TASK, INCREMENT } from './types';
 
 export function fetchTasks() {
   let tasks = {1: { 
@@ -28,6 +26,16 @@ export function createTask(values, callback) {
     payload: {title: 'new task'}
   };
 }
+
+export function increment(taskId) {
+  console.log('incrementing within actions file: ', taskId)
+
+  return {
+    type: INCREMENT,
+    payload: {title: 'new task'}
+  };
+}
+
 
 export function deleteTask(id, callback) {
 

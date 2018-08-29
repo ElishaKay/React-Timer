@@ -3,14 +3,13 @@ import { connect } from "react-redux";
 import { fetchTasks } from "../actions";
 
 import Tasks from './Tasks';
-import Counter from './Counter';
 import TasksNew from './NewTask';
 
 
 
 class TasksIndex extends Component {
   componentDidMount(){
-    console.log('componentDidMount function: ',this.props.fetchTasks())
+    console.log('componentDidMount function in TasksIndex:',this.props.fetchTasks())
   }
 
   render() {
@@ -19,7 +18,6 @@ class TasksIndex extends Component {
         <h1>Reselect Redux</h1>
         <TasksNew />
         <Tasks />
-        <Counter />
       </div>
     );
   }

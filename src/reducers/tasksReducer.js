@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { FETCH_TASKS, SAVE_TASK, DELETE_TASK } from "../actions";
+import { FETCH_TASKS, SAVE_TASK, DELETE_TASK } from "../actions/types";
 
 export default function(state = {}, action) {
   switch (action.type) {

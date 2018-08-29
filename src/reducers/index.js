@@ -8,7 +8,7 @@ import usersByIdReducer from "./usersByIdReducer";
 import usersListingReducer from "./usersListingReducer";
 
 
-export default combineReducers({
+const rootReducer = combineReducers({
   usersById: usersByIdReducer,
   usersListing: usersListingReducer,
   tasksById: tasksByIdReducer,
@@ -17,3 +17,6 @@ export default combineReducers({
   tasks: tasksReducer,
   form: formReducer
 });
+
+
+export default rootReducer;
