@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 class Counter extends React.Component {
   componentDidMount() {
+    console.log('Counter Component rerendered')
     setInterval(() => {
       this.props.increment();
     }, 1000);
