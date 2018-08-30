@@ -1,5 +1,5 @@
 import React from 'react';
-import {createSelector} from 'reselect'
+import {createSelector} from 'reselect';
 import {connect} from 'react-redux';
 
 import Counter from './Counter';

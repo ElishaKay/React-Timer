@@ -1,12 +1,7 @@
 `Adam's Notes about the ReactJS-Book-Lib project: 
-From ReactJS-Book-Lib: remove the 2 lines from main App.js:`
 
-// Development only axios helpers!
-import axios from 'axios';
-window.axios = axios;
 
-`
-"Also: Your actions/index.js file should be functional - meaning - no sideeffects or state.
+"Your actions/index.js file should be functional - meaning - no sideeffects or state.
 The current issue is that you're handling the "Title Already exists validation" within this file.
 Instead, you have 2 options:
 a) Use the 'selectors' library:
@@ -77,15 +72,16 @@ Feature-List:
 
 User can add tasks.
 User can play and pause tasks
+User receives a 'Play/Pause' button. When task is playing, the button becomes a pause symbol and vice versa.
 When User plays one task, all the other tasks automatically pause.
 User can see the total amount spent on each task and on all the tasks combined.
+
 
 Notes:
 
 Within this function, we need 2 things:
 
 posts, and the total amount of time.
-
 
 
 const getListing = createSelector(
