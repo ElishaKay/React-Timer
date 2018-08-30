@@ -14,13 +14,13 @@ class Counter extends React.Component {
   }
   
   render() {
-    console.log('this.props.count in counter component:',this.props.count);
+    console.log('this.props.task in counter component:',this.props.task);
     return (
       <div>
         <button className="btn"
           onClick={this.onIncrementClick.bind(this)}
         >Start Counting</button>
-        <h3>Count: </h3>
+        <h3>Count: {this.props.task.count}</h3>
       </div>
     );
   }

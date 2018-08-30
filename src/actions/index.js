@@ -28,8 +28,7 @@ export function createTask(values, callback) {
 }
 
 export function increment(task) {
-  console.log('incrementing within actions file: ', task)
-
+  
   return {
     type: INCREMENT,
     payload: task
