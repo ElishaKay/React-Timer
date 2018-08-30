@@ -1,7 +1,7 @@
 export const getTasks = () => ({
   tasks: [
-    {id: 'task-1', author: 'user-1', title: 'task 1',count:0},
-    {id: 'task-2', author: 'user-2', title: 'task 2',count:0}
+    {id: 'task-1', author: 'user-1', title: 'Learn React', count:0},
+    {id: 'task-2', author: 'user-2', title: 'Learn Redux', count:0}
   ],
   users: [
     {

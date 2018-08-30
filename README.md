@@ -46,7 +46,7 @@ const mapState = (state) => {
 };
 ```
 
-The problem is that the listing.map function returns a new array every time it's called. Therefore, we're returning a key-value pair:
+The problem is that the listing.map function returns a new array every time it's called (which causes the component to get rerendered every time - if we didn't have reselect). Let's have a closer look at the purpose of the 'listing.map function'. The listing.map function returns the following value, which is then set to the 'posts property':
 
 ```javascript
 {posts: [{post1, user1}, {post2, user2},...]}
@@ -60,7 +60,7 @@ Without reselect, this component would get rerendered every time there's a state
 
 <h3>How does reselect work?</h3>
 
-The first time our component is rendered, mapState calls the 'getListing' function created with the help of the 'createSelector()' method of reselect. Reselect then executes these 3 lines and stores the result of each:
+Have a look back at the first example above. The first time our component is rendered, mapState calls the 'getListing' function created with the help of the 'createSelector()' method of reselect. Reselect then executes these 3 lines and stores the result of each:
 
 
 ```javascript
