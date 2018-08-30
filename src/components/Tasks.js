@@ -10,7 +10,7 @@ class Tasks extends React.Component {
 
   render() {
 
-    console.log('Tasks in posts component: ',this.props.tasks)
+    console.log('Tasks in tasks component: ',this.props.tasks)
     console.log(`Tasks render ${++timesRendered}`);
     return (
       <div>
