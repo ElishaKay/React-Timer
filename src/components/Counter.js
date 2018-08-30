@@ -4,18 +4,23 @@ import { increment } from "../actions";
 
 class Counter extends React.Component {
   componentDidMount() {
-    console.log('Counter Component rerendered')
+    console.log('Counter Component rendered')
+  }
+
+  onIncrementClick() {
     setInterval(() => {
-      this.props.increment(this.props.task.id);
-    }, 1000);
+        this.props.increment(this.props.task);
+      }, 1000);
   }
   
   render() {
-    // console.log('this.props in counter component:',this.props);
-
+    console.log('this.props.count in counter component:',this.props.count);
     return (
       <div>
-        <h3>Count: {this.props.count}</h3>
+        <button className="btn"
+          onClick={this.onIncrementClick.bind(this)}
+        >Start Counting</button>
+        <h3>Count: </h3>
       </div>
     );
   }

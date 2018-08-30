@@ -27,12 +27,12 @@ export function createTask(values, callback) {
   };
 }
 
-export function increment(taskId) {
-  console.log('incrementing within actions file: ', taskId)
+export function increment(task) {
+  console.log('incrementing within actions file: ', task)
 
   return {
     type: INCREMENT,
-    payload: {title: 'new task'}
+    payload: task
   };
 }
 
